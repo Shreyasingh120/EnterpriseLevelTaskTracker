@@ -15,6 +15,7 @@ import {
   StatusPage,
 } from "./pages";
 import { setOpenSidebar } from "./redux/slices/authSlice";
+import ChatBot from "./components/ChatBot";
 
 function Layout() {
   const { user } = useSelector((state) => state.auth);
@@ -35,6 +36,8 @@ function Layout() {
           <Outlet />
         </div>
       </div>
+
+      <ChatBot />
     </div>
   ) : (
     <Navigate to='/log-in' state={{ from: location }} replace />
